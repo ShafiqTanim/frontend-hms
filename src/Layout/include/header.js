@@ -1,6 +1,22 @@
 import * as React from 'react';
-
+import { Link, useLocation } from 'react-router-dom';
 function Header(){
+    const activeMenu=(e)=>{
+        document.querySelectorAll('.submenu').forEach(
+            function(e){
+                e.classList.remove('active');
+            }
+        )
+        const childElement = e.target.parentElement.querySelector('.submenu');
+        if(childElement && childElement.classList.contains('submenu')){
+            childElement.classList.add('active');
+        }
+    }
+
+	const location = useLocation();
+	const isLinkActive = (path)=>{
+        return location.pathname == path ? 'active' : "";
+    }
     return(
         <nav className="untree_co--site-nav js-sticky-nav">
                 <div className="container d-flex align-items-center">
@@ -9,7 +25,10 @@ function Header(){
                     </div>
                     <div className="site-nav-ul-wrap text-center d-none d-lg-block">
                     <ul className="site-nav-ul js-clone-nav">
-                        <li className="active"><a href="index.html">Home</a></li>
+                        {/* <li className="active"><a href="index.html">Home</a></li> */}
+                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/")}`}>
+						<Link to={"/"} className={`sidebar-link`}>Home</Link>
+					    </li>
                         <li className="has-children">
                         <a href="rooms.html">Rooms</a>
                         <ul className="dropdown">
@@ -38,7 +57,9 @@ function Header(){
                         <li><a href="amenities.html">Amenities</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        {/* <li><a href="contact.html">Contact</a></li> */}
+                        <li> <Link to={"/contact"}>Contact</Link></li>
+                       
                     </ul>
                     </div>
                     <div className="icons-wrap text-md-right">
