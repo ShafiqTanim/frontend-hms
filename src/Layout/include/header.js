@@ -1,34 +1,40 @@
 import * as React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import '../assets/css/vendor/icomoon/style.css';
+// import '../assets/css/vendor/owl.carousel.min.css';
+import '../assets/css/vendor/aos.css';
+import '../assets/css/vendor/animate.min.css';
+import '../assets/css/vendor/bootstrap.css';
+import '../assets/css/style.css';
 function Header(){
-    const activeMenu=(e)=>{
-        document.querySelectorAll('.submenu').forEach(
-            function(e){
-                e.classList.remove('active');
-            }
-        )
-        const childElement = e.target.parentElement.querySelector('.submenu');
-        if(childElement && childElement.classList.contains('submenu')){
-            childElement.classList.add('active');
-        }
-    }
+    // const activeMenu=(e)=>{
+    //     document.querySelectorAll('.submenu').forEach(
+    //         function(e){
+    //             e.classList.remove('active');
+    //         }
+    //     )
+    //     const childElement = e.target.parentElement.querySelector('.submenu');
+    //     if(childElement && childElement.classList.contains('submenu')){
+    //         childElement.classList.add('active');
+    //     }
+    // }
 
-	const location = useLocation();
-	const isLinkActive = (path)=>{
-        return location.pathname == path ? 'active' : "";
-    }
+	// const location = useLocation();
+	// const isLinkActive = (path)=>{
+    //     return location.pathname == path ? 'active' : "";
+    // }
     return(
         <nav className="untree_co--site-nav js-sticky-nav">
                 <div className="container d-flex align-items-center">
                     <div className="logo-wrap">
-                    <a href="index.html" className="untree_co--site-logo">LuxuryHotel</a>
+                    <Link to={"/"} className="untree_co--site-logo">LuxuryHotel</Link>
                     </div>
                     <div className="site-nav-ul-wrap text-center d-none d-lg-block">
                     <ul className="site-nav-ul js-clone-nav">
-                        {/* <li className="active"><a href="index.html">Home</a></li> */}
-                        <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/")}`}>
+                        <li className="active"><Link to={"/"}>Home</Link></li>
+                        {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/")}`}>
 						<Link to={"/"} className={`sidebar-link`}>Home</Link>
-					    </li>
+					    </li> */}
                         <li className="has-children">
                         <a href="rooms.html">Rooms</a>
                         <ul className="dropdown">

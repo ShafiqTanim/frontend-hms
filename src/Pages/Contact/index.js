@@ -9,7 +9,7 @@ function Contact() {
             <main className="untree_co--site-main">
         
 
-        <div className="untree_co--site-hero inner-page bg-light" style={{backgroundColor: '#fff'}}>
+        <div className="untree_co--site-hero inner-page bg-light" style={{backgroundColor: '#000'}}>
           <div className="container">
             <div className="row align-items-center">
               <div className="col-md-9">
@@ -35,19 +35,19 @@ function Contact() {
                   
                   <form action="#">
                     <div className="form-group">
-                      <label for="name">Your Name *</label>
+                      <label htmlFor="name">Your Name *</label>
                       <input type="text" className="form-control" id="name"/>
                     </div>
                     <div className="form-group">
-                      <label for="email2">Your Email *</label>
+                      <label htmlFor="email2">Your Email *</label>
                       <input type="text" className="form-control" id="email2"/>
                     </div>
                     <div className="form-group">
-                      <label for="subject">Subject</label>
+                      <label htmlFor="subject">Subject</label>
                       <input type="text" className="form-control" id="subject"/>
                     </div>
                     <div className="form-group">
-                      <label for="message">Message *</label>
+                      <label htmlFor="message">Message *</label>
                       <textarea name="message" className="form-control" id="message" cols="30" rows="10"></textarea>
                     </div>
                     <div className="form-group">
