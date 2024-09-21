@@ -1,5 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './assets/css/vendor/icomoon/style.css';
+//import './assets/css/vendor/owl.carousel.min.css';
+import './assets/css/vendor/aos.css';
+import './assets/css/vendor/animate.min.css';
+import './assets/css/vendor/bootstrap.css';
+import './assets/css/style.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
